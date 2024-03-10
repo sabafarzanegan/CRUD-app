@@ -1,8 +1,11 @@
 import React from "react";
 import "./Table.css";
 
-
-function Table({ AllUsers }) {
+function Table({ AllUsers, setAllUsers }) {
+  const delethandler = (USERID) => {
+    const Newuser = AllUsers.filter((user) => user.id !== USERID);
+    setAllUsers(Newuser);
+  };
   return (
     <>
       <table>
@@ -23,7 +26,14 @@ function Table({ AllUsers }) {
               <td>{user.age}</td>
               <td>{user.skills}</td>
               <td>
-                <button className="actions-btn">حذف</button>
+                <button
+                  className="actions-btn"
+                  onClick={() => {
+                    delethandler(user.id);
+                  }}
+                >
+                  حذف
+                </button>
                 <button className="actions-btn">ویرایش</button>
               </td>
             </tr>

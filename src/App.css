@@ -1,6 +1,32 @@
-.app-title{
+.app-title {
   text-align: center;
   margin-top: 20px;
   font-size: 35px;
   font-weight: 500;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0px;
+}
+form input {
+  margin-left: 10px;
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+}
+.addusers {
+  all: unset;
+  padding: 8px 8px;
+  color: #fff;
+  background-color: #387adf;
+  margin-left: 4px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.addusers:hover {
+  background-color: #19a7ce;
+  color: black;
 }
