@@ -1,10 +1,22 @@
 import React from "react";
 import "./Table.css";
 
-function Table({ AllUsers, setAllUsers }) {
+function Table({ AllUsers, setAllUsers, setUser2 }) {
   const delethandler = (USERID) => {
     const Newuser = AllUsers.filter((user) => user.id !== USERID);
     setAllUsers(Newuser);
+  };
+  const editedhandler = (USERID2) => {
+    AllUsers.map((user) => {
+      if (user.id === USERID2) {
+        setUser2({
+          id: user.id,
+          username: user.username,
+          age: user.age,
+          skills: user.skills,
+        });
+      }
+    });
   };
   return (
     <>
@@ -34,7 +46,14 @@ function Table({ AllUsers, setAllUsers }) {
                 >
                   حذف
                 </button>
-                <button className="actions-btn">ویرایش</button>
+                <button
+                  onClick={() => {
+                    editedhandler(user.id);
+                  }}
+                  className="actions-btn"
+                >
+                  ویرایش
+                </button>
               </td>
             </tr>
           ))}
