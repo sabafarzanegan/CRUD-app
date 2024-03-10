@@ -1,6 +1,6 @@
 table {
   width: 900px;
-  
+
   width: 100%;
   border-collapse: collapse;
 }
@@ -13,9 +13,24 @@ th {
   padding: 10px;
 }
 th {
-  background-color: #2D9596;
+  background-color: #2d9596;
   color: white;
 }
 tr:nth-child(even) {
-  background-color: #9AD0C2;
+  background-color: #9ad0c2;
+}
+.actions-btn {
+  all: unset;
+  border: 1px solid #265073;
+  background-color: #265073;
+  margin-left: 4px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+
+}
+.actions-btn:hover{
+  background-color: #2d9596;
 }

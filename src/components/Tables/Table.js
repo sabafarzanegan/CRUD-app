@@ -1,8 +1,8 @@
 import React from "react";
 import "./Table.css";
-import supabase from "../../Suoabase";
 
-function Table() {
+
+function Table({ AllUsers }) {
   return (
     <>
       <table>
@@ -12,21 +12,22 @@ function Table() {
             <th>نام کاربری</th>
             <th>سن</th>
             <th>مهارت ها</th>
+            <th>عملیات</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>صبافرزانگان</td>
-            <td>24</td>
-            <td>html,css</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>صبافرزانگان</td>
-            <td>24</td>
-            <td>html,css</td>
-          </tr>
+          {AllUsers.map((user) => (
+            <tr>
+              <td>{user.id}</td>
+              <td>{user.username}</td>
+              <td>{user.age}</td>
+              <td>{user.skills}</td>
+              <td>
+                <button className="actions-btn">حذف</button>
+                <button className="actions-btn">ویرایش</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>
